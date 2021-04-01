@@ -22,4 +22,5 @@ class EndArguments {
      * status email send.</p>
      */
     Closure always
+    Boolean concurrentBuild
 }

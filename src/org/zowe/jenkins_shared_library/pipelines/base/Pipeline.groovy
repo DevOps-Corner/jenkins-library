@@ -805,7 +805,7 @@ class Pipeline {
             }
 
             // provide options to run concurrent builds
-            if (!args['concurrentBuild']) {
+            if (!args.concurrentBuild) {
                 buildOptions.push(steps.disableConcurrentBuilds())
             }
             // Add log rotator to build options
