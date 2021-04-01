@@ -804,9 +804,10 @@ class Pipeline {
                 }
             }
 
-            // should we always disable concurrent builds?
-            buildOptions.push(steps.disableConcurrentBuilds())
-
+            // provide options to run concurrent builds
+            if (!args.concurrentBuild) {
+                buildOptions.push(steps.disableConcurrentBuilds())
+            }
             // Add log rotator to build options
             buildOptions.push(steps.buildDiscarder(steps.logRotator(numToKeepStr: "${history}")))
 
